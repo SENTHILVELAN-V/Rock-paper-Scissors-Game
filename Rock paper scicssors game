@@ -1,0 +1,74 @@
+# Rock, Paper, Scissors Game*
+*Description:* Create a game where the user plays Rock, Paper, Scissors against the computer.
+
+---
+
+#### *Features:*
+- Allow the user to choose Rock, Paper, or Scissors.
+- Generate the computer's choice randomly.
+- Decide the winner based on the rules:
+  - Rock beats Scissors.
+  - Scissors beats Paper.
+  - Paper beats Rock.
+- Allow the user to play multiple rounds.
+
+---
+
+#### *Code Example:*
+
+python
+import random
+
+def rock_paper_scissors():
+    print("Welcome to Rock, Paper, Scissors!")
+    print("Enter 'rock', 'paper', or 'scissors' to play.")
+    print("Type 'exit' to quit the game.")
+    
+    choices = ["rock", "paper", "scissors"]
+
+    while True:
+        # Get user's choice
+        user_choice = input("Your choice: ").lower()
+        if user_choice == "exit":
+            print("Thanks for playing! Goodbye!")
+            break
+
+        if user_choice not in choices:
+            print("Invalid choice. Please try again.")
+            continue
+
+        # Generate computer's choice
+        computer_choice = random.choice(choices)
+        print(f"Computer's choice: {computer_choice}")
+
+        # Determine the winner
+        if user_choice == computer_choice:
+            print("It's a tie!")
+        elif (user_choice == "rock" and computer_choice == "scissors") or \
+             (user_choice == "scissors" and computer_choice == "paper") or \
+             (user_choice == "paper" and computer_choice == "rock"):
+            print("You win!")
+        else:
+            print("You lose!")
+
+# Run the game
+rock_paper_scissors()
+
+
+---
+
+#### *How It Works:*
+1. The user inputs their choice (rock, paper, or scissors).
+2. The computer randomly selects its choice.
+3. The program compares the choices to decide the winner based on predefined rules.
+4. The game runs in a loop until the user types "exit."
+
+---
+
+#### *What You'll Learn:*
+- Using random.choice for random selection.
+- Comparing strings and applying game logic.
+- Using loops for continuous gameplay.
+- Basic program structure and input/output.
+
+Let me know if you’d like even more project ideas or help refining this one!
